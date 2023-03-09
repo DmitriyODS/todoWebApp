@@ -5,9 +5,11 @@ import requests as requests
 
 from front_skeep.models.request import RequestLogin
 
+URL_SERVER = "http://127.0.0.1:8080"
+
 
 def api_auth(request_login: RequestLogin) -> (bool, dict):
-    url = "http://localhost:8080/auth"
+    url = f"{URL_SERVER}/auth"
     payload = json.dumps({
         "email": request_login.login,
         "password": request_login.password,
@@ -27,7 +29,7 @@ def api_auth(request_login: RequestLogin) -> (bool, dict):
 
 
 def api_register(request_login: RequestLogin) -> (bool, dict):
-    url = "http://localhost:8080/users"
+    url = f"{URL_SERVER}/users"
     payload = json.dumps({
         "email": request_login.login,
         "password": request_login.password,
@@ -47,7 +49,7 @@ def api_register(request_login: RequestLogin) -> (bool, dict):
 
 
 def api_add_new_keep(user_id, token, title) -> (bool, dict):
-    url = "http://localhost:8080/keeps"
+    url = f"{URL_SERVER}/keeps"
     payload = json.dumps({
         "user_id": user_id,
         "token": token,
@@ -67,7 +69,7 @@ def api_add_new_keep(user_id, token, title) -> (bool, dict):
 
 
 def api_get_keeps(user_id, token) -> (bool, dict):
-    url = "http://localhost:8080/keeps"
+    url = f"{URL_SERVER}/keeps"
     payload = json.dumps({
         "user_id": user_id,
         "token": token,
@@ -86,7 +88,7 @@ def api_get_keeps(user_id, token) -> (bool, dict):
 
 
 def api_del_keep(user_id, token, keep_id) -> (bool, dict):
-    url = f"http://localhost:8080/keeps/{keep_id}"
+    url = f"{URL_SERVER}/keeps/{keep_id}"
     payload = json.dumps({
         "user_id": user_id,
         "token": token,
@@ -105,7 +107,7 @@ def api_del_keep(user_id, token, keep_id) -> (bool, dict):
 
 
 def api_get_users(user_id, token) -> (bool, dict):
-    url = "http://localhost:8080/users"
+    url = f"{URL_SERVER}/users"
     payload = json.dumps({
         "user_id": user_id,
         "token": token,
@@ -124,7 +126,7 @@ def api_get_users(user_id, token) -> (bool, dict):
 
 
 def api_del_user(user_id, token, user_del_id) -> (bool, dict):
-    url = f"http://localhost:8080/users/{user_del_id}"
+    url = f"{URL_SERVER}/users/{user_del_id}"
     payload = json.dumps({
         "user_id": user_id,
         "token": token,
