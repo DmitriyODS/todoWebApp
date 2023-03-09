@@ -1,0 +1,128 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    background-color: #49454F;
+    width: 100%;
+    padding: 1rem;
+    justify-content: space-around;
+}
+
+.header .title_text {
+    color: #CAC4CF;
+    font-size: 3rem;
+}
+
+.header .title_text .logo_text {
+    color: #EFB8C8;
+    font-weight: lighter;
+    font-size: 4rem;
+}
+
+.header .about_text {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.header .auth_form {
+    background-color: #CBC2DB;
+    color: #332D41;
+    width: 26rem;
+    height: 28rem;
+    border-radius: 6%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem;
+}
+
+.auth_form .text_filed {
+    margin-bottom: 1rem;
+}
+
+.auth_form .auth_title {
+    font-size: 3rem;
+    align-self: flex-start;
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+.header .part_one {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1rem;
+    justify-content: center;
+}
+
+.header .part_one .keep_filed {
+    width: 100%;
+    background-color: #332D41;
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header .part_one .keep_filed .text_filed_keep {
+    width: 100%;
+    border-radius: 0.2rem;
+    outline: none;
+    background-color: inherit;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #CBC2DB;
+    border: 2px solid #CBC2DB;
+}
+
+.text_filed_keep::placeholder {
+    color: #CBC2DB;
+    opacity: 50%;
+}
+
+.content {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: #CAC4CF;
+}
+
+.content .subtitle-text {
+    font-size: 2rem;
+    padding: 1rem;
+    font-weight: lighter;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    background-color: #4A2532;
+    color: #EFB8C8;
+}
+
+.btn-save {
+    margin-left: 1rem;
+}
+
+.auth_form .btn-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.btn-group div:first-child {
+    margin-right: 1rem;
+}

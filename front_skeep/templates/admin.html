@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link href="{{ url_for('static', filename='./css/base.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='./css/admin.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<script src="{{ url_for('static', filename='./js/admin.js') }}" defer></script>
+<div class="main">
+    <div class="header">
+        <div class="logo-text">
+            SKeep
+        </div>
+        <div class="mode-text">
+            Административный режим
+        </div>
+        <div class="btn-group">
+            <div class="btn btn-outline" onclick="goToKeeps()">
+                <span class="material-symbols-outlined">list</span>
+                <div>Записи</div>
+            </div>
+            <div class="btn btn-outline" onclick="logout()">
+                <span class="material-symbols-outlined">logout</span>
+                <div>Выйти</div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="table-view">
+            <div class="table-header">
+                <div class="table-cell">ID</div>
+                <div class="table-cell">Email</div>
+                <div class="table-cell">Дата регистрации</div>
+                <div class="table-cell">Действия</div>
+            </div>
+            <div class="table-content">
+                {% if users_lst %}
+                {% for it in users_lst %}
+                <div class="table-row">
+                    <div class="table-cell table-row-borders-row">{{ it.user_id }}</div>
+                    <div class="table-cell table-row-borders-row">{{ it.email }}</div>
+                    <div class="table-cell table-row-borders-row">{{ it.date_create }}</div>
+                    <div class="table-cell">
+                        <span class="material-symbols-outlined btn-icon"
+                              onclick="removeUser({{ it.user_id }})">
+                            delete
+                        </span>
+                    </div>
+                </div>
+                {% endfor %}
+                {% elif err_info != "" %}
+                <div class="info">{{ err_info }}</div>
+                {% else %}
+                <div class="info">Список пользователей пуст</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

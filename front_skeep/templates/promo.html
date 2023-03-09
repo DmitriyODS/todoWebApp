@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>SKeep</title>
+    <link href="{{ url_for('static', filename='./css/base.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='./css/promo.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<script src="{{ url_for('static', filename='./js/promo.js') }}" defer></script>
+<div class="main">
+    <div id="backdrop" class="hide">
+        Загрузка ...
+    </div>
+    <div class="header">
+        <div class="part_one">
+            <div class="title_text"><span class="logo_text">SKeep</span> - просто запиши, чтобы запомнить</div>
+            <p class="about_text">Никаких сложных настроек и утомительных регистраций, просто сделай, что хочешь -
+                запиши</p>
+            <div class="keep_filed">
+                <input placeholder="Ваша заметка" class="text_filed_keep" type="text" id="user_keep"/>
+            </div>
+        </div>
+        <div class="auth_form">
+            <p class="auth_title">Войти:</p>
+            <div class="text_filed">
+                <label class="text_filed_label" for="user_email">Введите email:</label>
+                <input placeholder="Email" class="text_filed_input" type="email" name="email" id="user_email"/>
+            </div>
+            <div class="text_filed">
+                <label class="text_filed_label" for="user_pass">Введите свой (или придумайте) пароль:</label>
+                <input placeholder="Пароль" class="text_filed_input" type="password" name="email" id="user_pass"/>
+            </div>
+            <div class="btn-group">
+                <div class="btn btn-color-one" onclick="login()">
+                    <span class="material-symbols-outlined">login</span>
+                    <div>Войти</div>
+                </div>
+                <div class="btn btn-color-one" onclick="login(true)">
+                    <span class="material-symbols-outlined">person_add</span>
+                    <div>Регистрация</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <p class="subtitle-text">Просто введи почту и придумай пароль - это всё, что отделяет тебя от того инструмента,
+            который нужен.<br/>
+            Уже с нами? Тогда просто введи свою почту и пароль, который вводил ранее</p>
+    </div>
+    <div class="footer">
+        <div class="header_info">SKeep - сервис создания заметок</div>
+        <div class="header_info">Аттестационный проект - 2023</div>
+    </div>
+</div>
+</body>
+</html>

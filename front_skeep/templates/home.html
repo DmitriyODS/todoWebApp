@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="{{ url_for('static', filename='./css/base.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='./css/home.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<script src="{{ url_for('static', filename='./js/home.js') }}" defer></script>
+<div class="main">
+    <div class="header">
+        <div class="nav-bar">
+            <div class="logo-text">SKeep</div>
+            <div class="email-text">{{ user_email }}</div>
+            <div class="btn-group">
+                <div id="btn_users" class="btn btn-outline" onclick="goToAdmin()">
+                    <span class="material-symbols-outlined">group</span>
+                    <div>Пользователи</div>
+                </div>
+                <div class="btn btn-outline" onclick="logout()">
+                    <span class="material-symbols-outlined">logout</span>
+                    <div>Выйти</div>
+                </div>
+            </div>
+        </div>
+        <div class="keep-field">
+            <input placeholder="Ваша заметка" class="text-filed-keep" type="text" id="user_keep"/>
+            <div class="btn btn-color-one btn-save" onclick="addNewKeep()">
+                <span class="material-symbols-outlined">add</span>
+                <div>Добавить</div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        {% if keeps_lst %}
+        {% for keep in keeps_lst %}
+        <div class="keep-card">
+            <div class="card-title">{{ keep.title }}</div>
+            <span class="material-symbols-outlined btn-icon" onclick="removeKeep({{ keep.keep_id }})">delete</span>
+        </div>
+        {% endfor %}
+        {% elif err_info != "" %}
+        <div class="info">{{ err_info }}</div>
+        {% else %}
+        <div class="info">Список заметок пуст</div>
+        {% endif %}
+    </div>
+</div>
+</body>
+</html>

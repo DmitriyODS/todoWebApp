@@ -1,0 +1,117 @@
+.main {
+    display: grid;
+    grid-template-rows: 8rem 1fr;
+    width: 100%;
+    height: 100vh;
+    gap: 1rem;
+}
+
+.header {
+    background-color: #332D41;
+    color: #CBC2DB;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+}
+
+.header .logo-text {
+    color: #dea9b9;
+    user-select: none;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.header .mode-text {
+    font-size: 1.4rem;
+}
+
+.content {
+    background-color: #413b52;
+    color: #CBC2DB;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.table-view {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 4rem 1fr;
+    flex-direction: column;
+    position: relative;
+    gap: 1rem;
+}
+
+.table-view .table-content {
+    overflow-y: auto;
+}
+
+.table-view .table-header {
+    width: 100%;
+    height: 4rem;
+    background-color: #4A2532;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    align-items: center;
+    color: #dea9b9;
+}
+
+.table-view .table-row {
+    width: 100%;
+    height: 4rem;
+    background-color: #dea9b9;
+    color: #4A2532;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    margin-bottom: 0.2rem;
+    align-items: center;
+}
+
+.table-view .table-cell {
+    font-size: 1.6rem;
+    width: 100%;
+    text-align: center;
+}
+
+.table-row-borders {
+    border-right: 2px solid #dea9b9;
+}
+
+.table-row-borders-row {
+    border-right: 2px solid #4A2532;
+}
+
+.btn-outline {
+    border: 2px solid #CBC2DB;
+    height: min-content;
+}
+
+.btn-outline:hover {
+    border: 2px solid #d9d1e7;
+}
+
+.btn-outline:active {
+    border: 2px solid #c0b5d3;
+}
+
+.table-cell .btn-icon {
+    color: #4A2532;
+    cursor: pointer;
+    user-select: none;
+}
+
+.table-cell .btn-icon:hover {
+    color: #562f3c;
+    cursor: pointer;
+    user-select: none;
+}
+
+.table-cell .btn-icon:active {
+    color: #341923;
+    cursor: pointer;
+    user-select: none;
+}

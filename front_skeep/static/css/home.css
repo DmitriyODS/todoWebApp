@@ -1,0 +1,120 @@
+.main {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
+    grid-template-rows: 1fr 4fr;
+    height: 100vh;
+    justify-items: center;
+    gap: 2rem;
+}
+
+.header {
+    width: 100%;
+    background-color: #332D41;
+    color: #CBC2DB;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 0 1rem;
+    align-items: center;
+}
+
+.header .keep-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    background-color: #CBC2DB;
+    width: max-content;
+    padding: 1rem;
+    min-width: 64%;
+    border-radius: 0.4rem;
+}
+
+.header .keep-field .text-filed-keep {
+    width: 100%;
+    border-radius: 2rem;
+    outline: none;
+    background-color: inherit;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: #332D41;
+    border: 2px solid #332D41;
+    margin-right: 1rem;
+}
+
+.header .keep-field .text-filed-keep::placeholder {
+    color: #332D41;
+    opacity: 50%;
+}
+
+.header .nav-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .nav-bar .logo-text {
+    font-size: 2rem;
+    font-weight: normal;
+}
+
+.header .nav-bar .email-text {
+    font-size: 1.4rem;
+    font-weight: lighter;
+    color: #EFB8C8;
+}
+
+.btn-outline {
+    border: 2px solid #CBC2DB;
+}
+
+.btn-outline:hover {
+    border: 2px solid #d9d1e7;
+}
+
+.btn-outline:active {
+    border: 2px solid #c0b5d3;
+}
+
+.content {
+    width: 72%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.content .keep-card {
+    display: flex;
+    width: 100%;
+    background-color: #633B48;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.keep-card .card-title {
+    color: #FFD8E4;
+    font-size: 2rem;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.keep-card .btn-icon {
+    color: #FFD8E4;
+    cursor: pointer;
+    user-select: none;
+}
+
+.keep-card .btn-icon:hover {
+    color: #f3dde3;
+    cursor: pointer;
+    user-select: none;
+}
+
+.keep-card .btn-icon:active {
+    color: #eec6d2;
+    cursor: pointer;
+    user-select: none;
+}
